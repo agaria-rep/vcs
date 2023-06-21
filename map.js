@@ -29,8 +29,6 @@ fetch('./ids.json').then((response) => response.json()).then((json) => {
                     onEachFeature: function (feature, layer) {
                         layer.bindPopup('<h1>'+feature.properties.name+'</h1>');
                     }
-                }).bindPopup(function (layer) {
-                    return layer.feature.properties.name;
                 }).addTo(map));
     });
 });
