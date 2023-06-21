@@ -3,6 +3,13 @@ var map = L.map('map', {
     zoom: 1
 });
 
+var MyIcon = L.icon({
+    iconUrl: 'city.png',
+    iconSize:     [38, 95],
+    iconAnchor:   [22, 94],
+    popupAnchor:  [-3, -76]
+});
+
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -14,6 +21,9 @@ fetch('./ids.json').then((response) => response.json()).then((json) => {
             .then((json) => L.geoJSON(json, {
                     style: function (feature) {
                         return {color: feature.properties.stroke, fillColor: feature.properties.fill};
+                    },
+                    pointToLayer: function(feature, latlng){
+                        return L.marker(latlng, {icon: CityIcon});
                     }
                 }).bindPopup(function (layer) {
                     return layer.feature.properties.name;
