@@ -10,14 +10,17 @@ body {
 
 .vcs {
     position: fixed;
-    top: 90%;
-    left: 90%;
+    top: 80%;
+    left: 80%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-radius: 20px;
     padding: 20px;
     background-color: white;
+    z-index: 1;
+    width: 100px;
+    height: 50px;
 }
 
 .vcs h1 {
