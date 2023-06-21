@@ -13,7 +13,7 @@ body {
     top: 84%;
     left: 75%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     border-radius: 20px;
     padding: 20px;
@@ -24,8 +24,9 @@ body {
     border: 1px solid black;
 }
 
-.vcs h1 {
-    margin-left: 50px;
+.vcs img {
+    width: 49px;
+    height: 49px;
 }
 
 .marker {
