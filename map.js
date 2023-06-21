@@ -3,6 +3,11 @@ var map = L.map('map', {
     zoom: 1
 });
 
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
 fetch('./ids.json').then((response) => response.json()).then((json) => {
     json.forEach(element => {
         fetch('./data/'+element).then((response) => response.json()).then((json) => console.log(json));
