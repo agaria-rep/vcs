@@ -7,3 +7,19 @@ body {
     height: 98vh;
     width: 98vw;
 }
+
+.vcs {
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+.vcs h1 {
+    margin-left: 50px;
+}

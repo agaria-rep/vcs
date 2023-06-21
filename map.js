@@ -10,7 +10,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 fetch('./ids.json').then((response) => response.json()).then((json) => {
     json.forEach(element => {
-        fetch('./data/'+element).then((response) => response.json()).then((json) => console.log(json));
+        fetch('./data/'+element).then((response) => response.json()).then((json) => L.geoJSON(json).addTo(map));
     });
 });
 
