@@ -6,8 +6,8 @@ var map = L.map('map', {
 var CityIcon = L.icon({
     iconUrl: 'city.png',
     iconSize:     [10, 10],
-    iconAnchor:   [22, 94],
-    popupAnchor:  [-3, -76]
+    iconAnchor:   [0, 0],
+    popupAnchor:  [0, 0]
 });
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
