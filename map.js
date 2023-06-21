@@ -25,6 +25,9 @@ fetch('./ids.json').then((response) => response.json()).then((json) => {
                     },
                     pointToLayer: function(feature, latlng){
                         return L.marker(latlng, {icon: CityIcon});
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup('<h1>'+feature.properties.name+'</h1>');
                     }
                 }).bindPopup(function (layer) {
                     return layer.feature.properties.name;
