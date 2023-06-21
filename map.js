@@ -13,7 +13,7 @@ fetch('./ids.json').then((response) => response.json()).then((json) => {
         fetch('./data/'+element).then((response) => response.json())
             .then((json) => L.geoJSON(json, {
                     style: function (feature) {
-                        return {color: feature.properties.color};
+                        return {color: feature.properties.fill};
                     }
                 }).bindPopup(function (layer) {
                     return layer.feature.properties.name;
