@@ -10,8 +10,8 @@ body {
 
 .vcs {
     position: fixed;
-    top: 80%;
-    left: 80%;
+    top: 84%;
+    left: 75%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -19,8 +19,9 @@ body {
     padding: 20px;
     background-color: white;
     z-index: 1000;
-    width: 100px;
+    width: 150px;
     height: 50px;
+    border: 1px solid black;
 }
 
 .vcs h1 {
