@@ -6,7 +6,7 @@ var map = L.map('map', {
 var CityIcon = L.icon({
     iconUrl: 'city.png',
     iconSize:     [15, 15],
-    iconAnchor:   [0, 0],
+    iconAnchor:   [-50, -50],
     popupAnchor:  [0, 0]
 });
 
