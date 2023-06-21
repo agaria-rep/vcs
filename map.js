@@ -3,9 +3,9 @@ var map = L.map('map', {
     zoom: 1
 });
 
-var ids;
-await fetch('./ids.json').then((response) => response.json()).then((json) => ids = json);
-
-ids.forEach(element => {
-    fetch('./data/'+element).then((response) => response.json()).then((json) => console.log(json));
+fetch('./ids.json').then((response) => response.json()).then((json) => {
+    json.forEach(element => {
+        fetch('./data/'+element).then((response) => response.json()).then((json) => console.log(json));
+    });
 });
+
