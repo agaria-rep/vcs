@@ -19,8 +19,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function setIconSize(e) {
     var i;
     var zoomLevel = map.getZoom();
-    var x = zoomLevel * 0.5;
-    var y = zoomLevel * 0.5;
+    var x = zoomLevel * 10;
+    var y = zoomLevel * 10;
     var iconElements = document.getElementsByClassName('marker'); 
     for (i = 0; i < iconElements.length; i++) {
        iconElements[i].style.width = Math.round(x) + 'px';
