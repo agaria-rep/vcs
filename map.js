@@ -3,7 +3,7 @@ var map = L.map('map', {
     zoom: 1
 });
 
-var MyIcon = L.icon({
+var CityIcon = L.icon({
     iconUrl: 'city.png',
     iconSize:     [38, 95],
     iconAnchor:   [22, 94],
