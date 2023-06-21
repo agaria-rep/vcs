@@ -10,7 +10,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 fetch('./ids.json').then((response) => response.json()).then((json) => {
     json.forEach(element => {
-        fetch('./data/'+element).then((response) => response.json()).then((json) => L.geoJSON(json).addTo(map));
+        fetch('./data/'+element).then((response) => response.json())
+            .then((json) => L.geoJSON(json, {
+                    style: function (feature) {
+                        return {color: feature.properties.color};
+                    }
+                }).bindPopup(function (layer) {
+                    return layer.feature.properties.name;
+                }).addTo(map));
     });
 });
 
