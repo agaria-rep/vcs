@@ -21,7 +21,7 @@ function setIconSize(e) {
     var zoomLevel = map.getZoom();
     var x = zoomLevel * 0.5;
     var y = zoomLevel * 0.5;
-    var iconElements = document.getElementsByClassName('redIcon'); 
+    var iconElements = document.getElementsByClassName('marker'); 
     for (i = 0; i < iconElements.length; i++) {
        iconElements[i].style.width = Math.round(x) + 'px';
        iconElements[i].style.height = Math.round(y) + 'px';
