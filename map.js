@@ -16,10 +16,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-fetch('./ids.json').then((response) => response.json()).then((json) => {
-    json.forEach(element => {
-        fetch('./data/'+element).then((response) => response.json())
-            .then((json) => L.geoJSON(json, {
+fetch('./ids.json').then((response) => response.json()).then((ids) => {
+    ids.forEach(element => {
+        fetch('./data/'+element.id+".geojson").then((response) => response.json())
+            .then((geojson) => L.geoJSON(geojson, {
                     style: function (feature) {
                         return {color: feature.properties.stroke, fillColor: feature.properties.fill};
                     },
@@ -27,7 +27,9 @@ fetch('./ids.json').then((response) => response.json()).then((json) => {
                         return L.marker(latlng, {icon: CityIcon});
                     },
                     onEachFeature: function (feature, layer) {
-                        layer.bindPopup('<h1>'+feature.properties.name+'</h1>');
+                        if (feature.geometry.type == "Polygon") {
+                            layer.bindPopup('<h1>'+feature.properties.name+'</h1>');
+                        }
                     }
                 }).addTo(map));
     });
